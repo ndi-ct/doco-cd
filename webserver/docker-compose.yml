@@ -2,7 +2,7 @@
 # für Renovate-Demo (aktuelle Minor: 1.28.x)
 services:
   nginx:
-    image: nginx:1.27.3
+    image: nginx:1.29.8
     container_name: webserver
     ports:
       - "8080:80"
