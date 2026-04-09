@@ -20,11 +20,6 @@
       "matchUpdateTypes": ["major"],
       "enabled": true,
       "automerge": false
-    },
-    {
-      "description": "Datenbank-Images nie automatisch mergen",
-      "matchPackageNames": ["postgres", "redis"],
-      "automerge": false
     }
   ]
 }
