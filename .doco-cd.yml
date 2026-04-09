@@ -6,14 +6,6 @@ pull: true
 
 ---
 
-name: monitoring
-working_dir: monitoring/
-compose_files:
-  - docker-compose.yml
-pull: true
-
----
-
 name: database
 working_dir: database/
 compose_files:
