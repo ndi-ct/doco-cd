@@ -1,0 +1,24 @@
+# Monitoring-Stack – absichtlich veraltete Versionen
+# Grafana aktuell: 11.6.x, Prometheus aktuell: 3.4.x
+services:
+  grafana:
+    image: grafana/grafana:11.2.0
+    container_name: grafana
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:2.54.0
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - prom-data:/prometheus
+    restart: unless-stopped
+
+volumes:
+  grafana-data:
+  prom-data:

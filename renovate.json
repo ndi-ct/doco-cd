@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "description": "Patch-Updates automatisch mergen",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "description": "Minor-Updates als PR, manuell prüfen",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": false
+    },
+    {
+      "description": "Major-Updates anzeigen, aber nicht automatisch erstellen",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major"],
+      "enabled": true,
+      "automerge": false
+    },
+    {
+      "description": "Datenbank-Images nie automatisch mergen",
+      "matchPackageNames": ["postgres", "redis"],
+      "automerge": false
+    }
+  ]
+}

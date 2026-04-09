@@ -1,0 +1,27 @@
+# Datenbank-Stack – absichtlich veraltete Versionen
+# Redis aktuell: 8.x, PostgreSQL aktuell: 17.x
+services:
+  redis:
+    image: redis:7.2.6
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16.4
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: demo-nur-fuer-tests
+      POSTGRES_DB: appdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+  pg-data:
